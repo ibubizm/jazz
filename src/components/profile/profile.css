@@ -1,0 +1,14 @@
+.profile {
+  margin-top: 40px;
+}
+
+.profile__content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.desc {
+  text-align: start;
+  padding: 20px 0 0 20px;
+  font-size: 30px;
+}

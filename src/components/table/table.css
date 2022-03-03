@@ -1,0 +1,63 @@
+.counter {
+  margin-top: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: helvetica;
+  caption-side: top;
+  text-transform: capitalize;
+}
+
+td,
+th {
+  border: 1px solid;
+  padding: 10px;
+  min-width: 200px;
+  /* background: white; */
+  box-sizing: border-box;
+  text-align: left;
+}
+
+td {
+  box-shadow: 0 0 0 1px black;
+}
+.table-container {
+  margin-top: 50px;
+  position: relative;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: hsl(209, 82%, 42%);
+}
+
+thead th:first-child {
+  left: 0;
+  z-index: 3;
+}
+
+tbody {
+  overflow: scroll;
+  height: 200px;
+}
+
+tr > :first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  background: hsl(180, 50%, 70%);
+  left: 0;
+}
+
+tr > :first-child {
+  box-shadow: inset 0px 1px black;
+}
+
+.active {
+  background: rgb(252, 248, 9);
+}

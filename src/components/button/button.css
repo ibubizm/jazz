@@ -1,0 +1,25 @@
+.btn {
+  text-transform: uppercase;
+  color: #fff;
+  padding: 13px 16px;
+  outline: none;
+  background-color: #0095cf;
+  border-radius: 3px;
+  border: 0;
+  transition: all ease 0.2s;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background: lighten(#f2f2f2, 10%);
+  cursor: pointer;
+}
+
+.btn__nav {
+  margin-left: 20px;
+}
+
+.btn__nav:hover {
+  color: white;
+  background-color: #0095cf;
+}

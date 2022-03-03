@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  background: #00acee;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  /* font-size: 20px; */
+  text-transform: uppercase;
+  color: white;
+}
+
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left ul {
+  display: flex;
+}
+
+.nav__link {
+  color: white;
+  font-size: 20px;
+  height: 100%;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.nav__user {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
