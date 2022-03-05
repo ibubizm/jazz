@@ -69,12 +69,12 @@ export const Table = () => {
         <table>
           <thead>
             <tr>
-              <th>surname</th>
               <th>id</th>
-              <th>name</th>
+              <th>фамилия</th>
+              <th>имя</th>
               <th>email</th>
-              <th>gender</th>
-              <th>ip adress</th>
+              <th>пол</th>
+              <th>ip адрес</th>
             </tr>
           </thead>
           <tbody>
@@ -84,6 +84,7 @@ export const Table = () => {
                 onClick={() => addRow(i)}
                 key={i.id}
               >
+                <td>{i.id}</td>
                 <td
                   onDoubleClick={() => {
                     modalVisible(i, 'фамилия')
@@ -91,7 +92,6 @@ export const Table = () => {
                 >
                   {i.last_name}
                 </td>
-                <td>{i.id}</td>
                 <td
                   onDoubleClick={() => {
                     modalVisible(i, 'имя')
