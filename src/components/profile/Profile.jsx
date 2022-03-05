@@ -6,6 +6,7 @@ export const Profile = () => {
   const { user } = useContext(UserContext)
   return (
     <div className="profile">
+      <h1>Профиль</h1>
       <div className="profile__content container">
         <img src={user.avatar} alt="" />
         <div className="desc">

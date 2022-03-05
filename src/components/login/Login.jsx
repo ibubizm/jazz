@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { UserContext } from '../../context'
 import { Button } from '../button/button'
 import './login.css'
+import { useNavigate } from 'react-router-dom'
 
 const admin = {
   userName: 'admin',
@@ -18,6 +19,7 @@ const user = {
 }
 
 export const Login = () => {
+  const navigate = useNavigate()
   const { isAuth, setIsAuth, setUser } = useContext(UserContext)
   const [values, setValues] = useState({ login: '', password: '' })
 
@@ -27,6 +29,7 @@ export const Login = () => {
       //получил даннык с сервера и закинул в контекст
       setIsAuth(true)
       setUser(user)
+      navigate('profile')
     } else {
       alert('Имя пользователя или пароль введены неверно')
     }

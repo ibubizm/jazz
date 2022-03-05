@@ -32,10 +32,10 @@ export const Table = () => {
     const newData = data.map((item) => {
       if (item.id == i.id) {
         if (fealdName == 'имя') {
-          item.last_name = input
+          item.first_name = input
         }
         if (fealdName == 'фамилия') {
-          item.first_name = input
+          item.last_name = input
         }
         if (fealdName == 'email') {
           item.email = input
@@ -56,6 +56,7 @@ export const Table = () => {
 
   return (
     <div className="container" id="page">
+      <h1>Таблица</h1>
       <div className="counter">
         <div>
           Всего строк <strong>{data.length}</strong>
@@ -132,16 +133,21 @@ export const Table = () => {
             setVisible({ ...visible, visible: false })
           }}
         >
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <Button
-            onClick={() => onChangeRow(visible.currentItem, visible.feald)}
+          <form
+            onSubmit={() => onChangeRow(visible.currentItem, visible.feald)}
           >
-            save
-          </Button>
+            <input
+              type="text"
+              active
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <Button
+            // onClick={() => onChangeRow(visible.currentItem, visible.feald)}
+            >
+              save
+            </Button>
+          </form>
         </Modal>
       )}
     </div>
