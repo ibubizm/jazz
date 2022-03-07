@@ -1,0 +1,8 @@
+.fc-toolbar-chunk {
+  display: flex;
+  padding: 20px;
+}
+
+.fc-toolbar-chunk div {
+  display: flex;
+}

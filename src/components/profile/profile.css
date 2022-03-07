@@ -1,14 +1,24 @@
-.profile {
-  margin-top: 40px;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
 }
 
-.profile__content {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+.event {
+  margin-top: 15px;
 }
 
-.desc {
-  text-align: start;
-  padding: 20px 0 0 20px;
-  font-size: 30px;
+.profile__img {
+  width: 100%;
+}
+
+.event__date {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.email {
+  color: grey;
+  font-size: 18px;
 }

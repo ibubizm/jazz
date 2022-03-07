@@ -35,6 +35,11 @@ export const Navbar = () => {
               таблица
             </Link>
           </li>
+          <li>
+            <Link className="nav__link" to={'calendar'}>
+              календарь
+            </Link>
+          </li>
         </ul>
         <div className="nav__right">
           {!isAuth ? (

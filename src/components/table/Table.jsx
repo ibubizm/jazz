@@ -10,7 +10,7 @@ export const Table = () => {
   const [active, setActive] = useState([])
   const [visible, setVisible] = useState({
     visible: false,
-    feald: null,
+    field: null,
     currentItem: {},
   })
   const [input, setInput] = useState('')
@@ -24,26 +24,26 @@ export const Table = () => {
     setList([...list, row.id])
   }
 
-  const modalVisible = (i, fealdName) => {
-    setVisible({ visible: true, feald: fealdName, currentItem: i })
+  const modalVisible = (i, fieldName) => {
+    setVisible({ visible: true, field: fieldName, currentItem: i })
   }
 
-  const onChangeRow = (i, fealdName) => {
+  const onChangeRow = (i, fieldName) => {
     const newData = data.map((item) => {
       if (item.id == i.id) {
-        if (fealdName == 'имя') {
+        if (fieldName == 'имя') {
           item.first_name = input
         }
-        if (fealdName == 'фамилия') {
+        if (fieldName == 'фамилия') {
           item.last_name = input
         }
-        if (fealdName == 'email') {
+        if (fieldName == 'email') {
           item.email = input
         }
-        if (fealdName == 'пол') {
+        if (fieldName == 'пол') {
           alert('пол менять нельзя!!!!')
         }
-        if (fealdName == 'ip') {
+        if (fieldName == 'ip') {
           alert('ip менять нельзя!!!!')
         }
       }
@@ -66,26 +66,27 @@ export const Table = () => {
         </div>
       </div>
       <div className="table-container">
-        <table>
+        <table className="table">
           <thead>
-            <tr>
-              <th>id</th>
-              <th>фамилия</th>
-              <th>имя</th>
-              <th>email</th>
-              <th>пол</th>
-              <th>ip адрес</th>
+            <tr className="tr">
+              <th className="th">id</th>
+              <th className="th">фамилия</th>
+              <th className="th">имя</th>
+              <th className="th">email</th>
+              <th className="th">пол</th>
+              <th className="th">ip адрес</th>
             </tr>
           </thead>
           <tbody>
             {data.map((i) => (
               <tr
-                className={active.includes(i.id) ? 'active' : ''}
+                className={active.includes(i.id) ? 'tr active' : 'tr'}
                 onClick={() => addRow(i)}
                 key={i.id}
               >
-                <td>{i.id}</td>
+                <td className="td">{i.id}</td>
                 <td
+                  className="td"
                   onDoubleClick={() => {
                     modalVisible(i, 'фамилия')
                   }}
@@ -93,6 +94,7 @@ export const Table = () => {
                   {i.last_name}
                 </td>
                 <td
+                  className="td"
                   onDoubleClick={() => {
                     modalVisible(i, 'имя')
                   }}
@@ -100,6 +102,7 @@ export const Table = () => {
                   {i.first_name}
                 </td>
                 <td
+                  className="td"
                   onDoubleClick={() => {
                     modalVisible(i, 'email')
                   }}
@@ -107,6 +110,7 @@ export const Table = () => {
                   {i.email}
                 </td>
                 <td
+                  className="td"
                   onDoubleClick={() => {
                     modalVisible(i, 'пол')
                   }}
@@ -114,6 +118,7 @@ export const Table = () => {
                   {i.gender}
                 </td>
                 <td
+                  className="td"
                   onDoubleClick={() => {
                     modalVisible(i, 'ip')
                   }}
@@ -128,13 +133,13 @@ export const Table = () => {
 
       {visible.visible && (
         <Modal
-          title={visible.feald}
+          title={visible.field}
           onClose={() => {
             setVisible({ ...visible, visible: false })
           }}
         >
           <form
-            onSubmit={() => onChangeRow(visible.currentItem, visible.feald)}
+            onSubmit={() => onChangeRow(visible.currentItem, visible.field)}
           >
             <input
               type="text"
@@ -142,11 +147,7 @@ export const Table = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-            <Button
-            // onClick={() => onChangeRow(visible.currentItem, visible.feald)}
-            >
-              save
-            </Button>
+            <Button>save</Button>
           </form>
         </Modal>
       )}

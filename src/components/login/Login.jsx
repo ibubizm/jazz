@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const admin = {
   userName: 'admin',
-  password: 12345678,
+  password: '12345678',
 }
 
 const user = {
@@ -26,7 +26,7 @@ export const Login = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     if (values.login == admin.userName && values.password == admin.password) {
-      //получил даннык с сервера и закинул в контекст
+      //получил данные с сервера и закинул в контекст
       setIsAuth(true)
       setUser(user)
       navigate('profile')

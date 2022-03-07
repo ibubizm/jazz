@@ -3,6 +3,7 @@ import { Profile } from '../components/profile/Profile'
 import { Info } from '../components/info/Info'
 import { Main } from '../components/main/Main'
 import { Table } from '../components/table/Table'
+import { Calendar } from '../components/calendar/calendar'
 
 export const publicRoutes = [
   { path: 'login', element: <Login /> },
@@ -15,5 +16,6 @@ export const privateRoutes = [
   { path: 'info', element: <Info /> },
   { path: 'profile', element: <Profile /> },
   { path: 'table', element: <Table /> },
+  { path: 'calendar', element: <Calendar /> },
   { path: '*', element: <Profile /> },
 ]
